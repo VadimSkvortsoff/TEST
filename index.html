@@ -34,6 +34,39 @@
 @keyframes skyIn{from{opacity:0}to{opacity:1}}@keyframes skyRotate{to{transform:rotate(360deg)}}@keyframes breath{50%{opacity:.55;transform:scale(1.035)}}@keyframes starsPulse{to{opacity:.4;filter:brightness(1.8)}}@keyframes titleGlow{to{opacity:1;text-shadow:0 0 12px #fff,0 0 45px #8cbcff}}@keyframes orbPulse{50%{transform:scale(1.07);filter:brightness(1.4)}}@keyframes sigilRise{from{opacity:0;transform:translateY(70px) scale(.3) rotate(-35deg);filter:blur(10px)}to{opacity:1;transform:translateY(0) scale(1) rotate(0);filter:blur(0)}}@keyframes meteor{0%{opacity:0;transform:translate(-30%,80px) rotate(-20deg)}25%{opacity:1}100%{opacity:0;transform:translate(80%,-130px) rotate(-20deg)}}@keyframes cardPop{from{opacity:0;transform:translateY(28px) scale(.75);filter:blur(5px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}@keyframes cardShine{to{left:150%}}
 @media(prefers-reduced-motion:reduce){.wish-cinema *,.result-card,.result-card:after{animation-duration:.01ms!important;animation-iteration-count:1!important;}}
 
+
+/* Illustrated wish-result stage, inspired by the concept art */
+#modal{background:radial-gradient(ellipse at 50% 35%,#2865b9a8 0%,#14244be8 42%,#050916f5 100%);overflow:hidden}
+#modal:before{content:"";position:absolute;inset:0;pointer-events:none;background:
+radial-gradient(ellipse at 8% 90%,#a5d8ff9c 0%,transparent 23%),
+radial-gradient(ellipse at 94% 88%,#a5d8ff8a 0%,transparent 25%),
+radial-gradient(ellipse at 50% 30%,#8cbaff55 0%,transparent 38%),
+radial-gradient(2px 2px at 12% 19%,#fff 50%,transparent 60%),
+radial-gradient(2px 2px at 77% 13%,#fff 50%,transparent 60%),
+radial-gradient(1px 1px at 62% 25%,#fff 50%,transparent 60%),
+radial-gradient(2px 2px at 89% 42%,#fff 50%,transparent 60%),
+radial-gradient(1px 1px at 23% 38%,#fff 50%,transparent 60%),
+radial-gradient(1px 1px at 44% 8%,#fff 50%,transparent 60%);
+animation:starsPulse 2.4s ease-in-out infinite alternate}
+#modal:after{content:"✦     ✧          ✦     ·      ✧       ✦";position:absolute;top:10%;left:-10%;width:120%;height:80%;font-size:clamp(20px,4vw,48px);letter-spacing:.8em;color:#d7e8ff5c;pointer-events:none;transform:rotate(-14deg);text-shadow:0 0 35px #82baff;animation:skyDrift 12s linear infinite}
+#modal .modal-box{position:relative;z-index:1;background:linear-gradient(180deg,#101b36dd,#11162beF);border-color:#b9d7ff66;box-shadow:0 0 0 1px #ffffff0b,0 0 60px #4f8bff45,inset 0 0 60px #6b9fff12;backdrop-filter:blur(9px)}
+#modal .modal-head h2{color:#fff2d2;text-shadow:0 0 25px #ffdf8a66}
+#modal .modal-note{color:#d6e4ff}
+#modal .results{perspective:900px}
+#modal .result-card{min-height:200px;border-radius:16px 16px 24px 24px;border-width:1px;background:linear-gradient(180deg,#8ebaff42,#253b66b8 65%,#111b35);box-shadow:inset 0 0 24px #c6e3ff1c,0 12px 28px #0004}
+#modal .result-card:before{background:radial-gradient(ellipse at 50% 18%,#fff9,transparent 44%),linear-gradient(180deg,#8abaff18,transparent 65%)}
+#modal .result-card .big{width:78px;height:96px;border-radius:42px 42px 22px 22px;font-size:42px;border:1px solid #d4e9ffb8;background:linear-gradient(180deg,#9bc9ff8c,#35558b9c);box-shadow:0 0 24px #79baff6b,inset 0 0 24px #fff4}
+#modal .result-card.r5{border-color:#ffe39a;background:linear-gradient(180deg,#ffdc784a,#8d6336aa 55%,#231e3e);box-shadow:inset 0 0 30px #ffdc7833,0 0 30px #ffcf5c40}
+#modal .result-card.r5 .big{border-color:#fff0b4;background:linear-gradient(180deg,#fff2c9,#f0b74c 45%,#8152a2);box-shadow:0 0 30px #ffd66e99,inset 0 0 20px #fff}
+#modal .result-card.r4{border-color:#d8b4ff;background:linear-gradient(180deg,#d8a0ff4d,#5d438bba 60%,#201d3d);box-shadow:inset 0 0 28px #bc8bff30,0 0 24px #b178ff38}
+#modal .result-card.r4 .big{border-color:#e7caff;background:linear-gradient(180deg,#f2ddff,#b17bea 45%,#4b5a9a)}
+#modal .result-card .stars{color:#ffe4a0;text-shadow:0 0 12px #ffcf61}
+#modal .result-card strong{font-size:12px;text-shadow:0 2px 8px #000}
+#modal .result-card small{color:#dce7ff}
+#modal .close{background:#101b36aa;border-color:#ffffff55}
+@keyframes skyDrift{0%{transform:translateX(-3%) rotate(-14deg)}100%{transform:translateX(3%) rotate(-14deg)}}
+@media(max-width:560px){#modal .result-card{min-height:160px}#modal .result-card .big{height:70px;width:64px}}
+
 </style>
 </head>
 <body>
